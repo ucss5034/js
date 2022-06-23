@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomColor</title>
+</head>
+
+<body>
+    <!-- Random >> Math.random() * totalValue + lowerValue  -->
+    <script type="text/javascript">
+        var colors = ["red", "green", "yellow", "blue", "black", "white", "purple", "pink", "orange", "skyBlue"];
+        function selectForm(lowerValue, upperValue) {
+            var choice = upperValue - lowerValue + 1;
+            return Math.floor(Math.random() * choice + lowerValue);
+        }
+        alert("Random Color: " + colors[selectForm(0, colors.length - 1)]);
+    </script>
+
+</body>
+
+</html>

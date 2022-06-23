@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <style>
+        #searchbox {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Student Form</legend>
+        <table>
+            <tr>
+                <td>Student Name:</td>
+                <td><input type="text" id="stdName"></td>
+            </tr>
+            <tr>
+                <td>Roll No:</td>
+                <td><input type="text" id="rollNo"></td>
+            </tr>
+            <tr>
+                <td>P1 :</td>
+                <td><input type="number" id="p1"></td>
+            </tr>
+            <tr>
+                <td>P2:</td>
+                <td><input type="number" id="p2"></td>
+            </tr>
+            <tr>
+                <td><button onclick="addStudent()">ADD</td>
+                <td><button onclick="searchStd()">SEARCH</td>
+                <td><button onclick="clearField()">CLEAR</td>
+            </tr>
+        </table>
+        <fieldset id="searchbox">
+            <legend>Search Result</legend>
+            <tr>
+                <td>Student Name:</td>
+                <td>
+                    <p id="name"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Roll No:</td>
+                <td>
+                    <p id="rollno"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>P1 :</td>
+                <td>
+                    <p id="pp1"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>P2:</td>
+                <td>
+                    <p id="pp2"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>totalMark:</td>
+                <td>
+                    <p id="ttM"></p>
+                </td>
+            </tr>
+        </fieldset>
+    </fieldset>
+    <script type="text/javascript">
+        var stdName = document.getElementById("stdName");
+        var rollNo = document.getElementById("rollNo");
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+
+        var students = [];
+        function Student(name, rno, p1, p2, totalmart) {
+            this.name = name;
+            this.rno = rno;
+            this.p1 = p1;
+            this.p2 = p2;
+            this.totalMart = totalmart;
+        }
+        function addStudent() {
+            var totalMark = parseInt(p1.value) + parseInt(p2.value);
+            students.push(new Student(stdName.value, rollNo.value, p1.value, p2.value, totalMark));
+
+        }
+        function searchStd() {
+
+        }
+        function clearField() {
+            stdName.value = "";
+            rollNo.value = "";
+            p1.value = "";
+            p2.value = "";
+        }
+    </script>
+</body>
+
+</html>

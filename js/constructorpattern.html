@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Pattern</title>
+</head>
+
+<body>
+    <h1>Students' Informations</h1>
+    <p id="stdInfo"></p>
+    <button onclick="addStudent()">Add</button>
+    <script type="text/javascript">
+        var stdInfo = document.getElementById("stdInfo");
+        function Student(name, rno, p1, p2) {
+            this.name = name;
+            this.rno = rno;
+            this.p1 = p1;
+            this.p2 = p2;
+            this.sayName = function () {
+                alert(this.name);
+            };
+        }
+        function addStudent() {
+            var stdNum = parseInt(prompt("Enter Student Number: "));
+            var students = [];
+            for (num = 1; num <= stdNum; num++) {
+                var name = String(prompt("Student" + num + "'s " + "Name: "));
+                var rno = String(prompt("Student" + num + "'s " + "Roll No: ", "2CS-"));
+                var p1 = parseInt(prompt("Student" + num + "'s " + "Paper 1: "));
+                var p2 = parseInt(prompt("Student" + num + "'s " + "Paper 2: "));
+                var totalMark = p1 + p2;
+                students.push(new Student(name, rno, p1, p2));
+                document.write("Student" + num + ": [" + "name: " + name + ", rno: " + rno + ", p1: " + p1 + ", p2: " + p2 + ", totalMark: " + totalMark + "] <br>");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
